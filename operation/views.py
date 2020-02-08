@@ -40,12 +40,10 @@ class DetailOperation(generics.RetrieveDestroyAPIView):
 
 class CreateOperation(generics.CreateAPIView):
     queryset = Operation.objects.all()
-    permission_classes = [IsAuthenticated, IsSimpleUser]
+    permission_classes = [IsSimpleUser]
     serializer_class = CreateOperationSerializer
 
     def post(self, request, *args, **kwargs):
-        # new_request = dict(request.data)
-        # new_request.update({'client_fk': [str(Client.objects.get(user__username=request.user).pk)]})
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

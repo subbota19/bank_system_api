@@ -3,7 +3,7 @@ from .models import Client
 
 
 class AdminClient(admin.ModelAdmin):
-    list_display = ['name', 'email', 'country', 'balance', 'bank']
+    list_display = ['id', 'name', 'email', 'country', 'balance', 'bank']
 
     @staticmethod
     def name(obj):

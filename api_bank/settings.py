@@ -24,7 +24,7 @@ SECRET_KEY = 'cad_=patr!is1adez*dsy!tyk=3voc&7e6dpc6ancp=s)6dh+!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testserver', '127.0.0.1']
 
 # Application definition
 
@@ -51,6 +51,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
