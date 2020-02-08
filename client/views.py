@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
-from rest_framework import generics, mixins
+from rest_framework import generics
 from .serializers import CreateClientSerializer, DetailClientSerializer
 from .models import Client
 from rest_framework.response import Response
